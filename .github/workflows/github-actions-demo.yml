@@ -63,15 +63,15 @@ jobs:
       - name: Find and Replace version
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "verion: \\d+\\.\\d+\\.\\d+"
+          find: "version: \\d+\\.\\d+\\.\\d+"
           replace: "version: ${{ steps.version.outputs.version }}"
           regex: true
           include: "**Chart.yaml"
       - name: Find and Replace appVersion
         uses: jacobtomlinson/gha-find-replace@v3
         with:
-          find: "appVerion: \"\\d+\\.\\d+\\.\\d+\""
-          replace: "appVerion: \"${{ steps.version.outputs.version }}\""
+          find: "appVersion: \"\\d+\\.\\d+\\.\\d+\""
+          replace: "appVersion: \"${{ steps.version.outputs.version }}\""
           regex: true
           include: "**Chart.yaml"
       - name: Print changes
