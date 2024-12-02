@@ -83,9 +83,4 @@ jobs:
           git config --global user.email 'shaulca123@gmail.com'
           git commit -am "Automated version increase"
           git push
-      - name: Bump version and push tag
-        id: tag_version
-        uses: mathieudutour/github-tag-action@v6.2
-        with:
-          github_token: ${{ secrets.PAT }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
