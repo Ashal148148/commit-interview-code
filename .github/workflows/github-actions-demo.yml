@@ -45,11 +45,15 @@ jobs:
   Update-Infra-As-Code-Repo:
     permissions: write-all
     runs-on: ubuntu-latest
+    needs: Build-Push-Docker-Increment-Tag-Release
     steps:
       - name: Check out repository code
         uses: actions/checkout@v4
         with: 
           repository: Ashal148148/commit-interview
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
       - name: Get next version
         uses: reecetech/version-increment@2024.10.1
         id: version
