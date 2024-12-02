@@ -9,7 +9,7 @@
  <h1>hello commit</h1>
  <img src="/COMMIT-Logo.png" width="1262" height="333">
  <h1> Shaul was here</h1>
- <h2> 7 <h2>
+ <h2> 8 <h2>
  <?php
 // Connecting, selecting database
 $dbhost = getenv('DB_HOST');
