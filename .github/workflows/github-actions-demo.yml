@@ -9,8 +9,6 @@ jobs:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - name: Check out repository code
         uses: actions/checkout@v4
-        with:
-          token: ${{ secrets.PAT }}
       - name: Get next version
         uses: reecetech/version-increment@2024.10.1
         id: version
@@ -52,6 +50,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
         with: 
+          token: ${{ secrets.PAT }}
           repository: Ashal148148/commit-interview
       - name: List files in the repository
         run: |
