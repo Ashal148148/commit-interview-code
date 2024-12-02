@@ -66,14 +66,16 @@ jobs:
           find: "verion: \\d+\\.\\d+\\.\\d+"
           replace: "version: ${{ steps.version.outputs.version }}"
           regex: true
-          include: "commit-application/Chart.yaml"
+          include: "**Chart.yaml"
       - name: Find and Replace appVersion
         uses: jacobtomlinson/gha-find-replace@v3
         with:
           find: "appVerion: \"\\d+\\.\\d+\\.\\d+\""
           replace: "appVerion: \"${{ steps.version.outputs.version }}\""
           regex: true
-          include: "commit-application/Chart.yaml"
+          include: "**Chart.yaml"
+      - name: Print changes
+        run: cat ${{ github.workspace }}/commit-application/Chart.yaml
       - name: Commit version changes
         run: |
           git config --global user.name 'Shaul Carvalho'
